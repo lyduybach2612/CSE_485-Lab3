@@ -22,6 +22,7 @@
             <label class="form-check-label" for="completed">Completed</label>
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
+        <a href="/tasks" class="btn btn-danger">Back</a>
     </form>
 </div>
 
