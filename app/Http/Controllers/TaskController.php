@@ -13,9 +13,8 @@ class TaskController extends Controller
     public function index()
     {
         $i = 1;
-        $page = Task::orderBy('updated_at','desc')->paginate(10);
         $tasks = Task::orderBy('updated_at', 'desc')->paginate(10);
-        return view("tasks.index", compact(['tasks', 'i', 'page']));
+        return view("tasks.index", compact(['tasks', 'i']));
     }
 
     /**
@@ -37,7 +36,7 @@ class TaskController extends Controller
             'long_description' => 'required',
             'completed' => 'nullable|boolean'
         ]);
-
+        
         $taskData = $request->all();
         $taskData['completed'] = $request->has('completed') ? 1 : 0;
         Task::create($taskData);
